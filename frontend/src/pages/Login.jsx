@@ -1,11 +1,18 @@
-import React from 'react'
-import LoginForm from '../components/auth/LoginForm'
+import React from "react";
+import LoginForm from "../components/auth/LoginForm";
+import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+const Login = () => {
+  const navigate = useNavigate();
+  return (
+    <div className="auth-container">
+        <div>
+            <h2>Login</h2>
+            <LoginForm onLogin={() => navigate("/dashboard")} />
+        </div>
+    </div>
 
-    
+  );
+};
 
-    return (
-        <LoginForm />
-    );
-}
+export default Login;
